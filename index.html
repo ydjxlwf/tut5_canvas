@@ -3,7 +3,7 @@
    <body>
     <!-- <script src="myCanvas1.js"></script> -->
    <canvas id="myCanvas1" width="800" height="800"
-           style="border: 1px solid green">
+           style="border: 1px solid rgb(199, 228, 35)">
        This text is displayed if your browser
        does not support HTML5 canvas
    </canvas>
@@ -13,7 +13,7 @@
        // so we can easily access them in the console
        window.canvas = document.getElementById('myCanvas1');
        window.ctx = canvas.getContext('2d');
-       ctx.fillStyle="green";
+       ctx.fillStyle="rgb(100,250,100)";
        ctx.fillRect(0,0,800,800);
 
        
@@ -26,13 +26,13 @@
  ctx.stroke(); // Draw the path just constructed abov
 
  ctx.beginPath();
- ctx.arc(300, 300, 30, 2*Math.PI, 0, 0); 
+ ctx.arc(300, 300, 25, 2*Math.PI, 0, 0); 
  ctx.fillStyle = "black";
  ctx.fill();
  ctx.stroke(); 
 
  ctx.beginPath();
- ctx.arc(500, 300, 30, 2*Math.PI, 0, 0); 
+ ctx.arc(500, 300, 25, 2*Math.PI, 0, 0); 
  ctx.fillStyle = "black";
  ctx.fill();
 
@@ -43,14 +43,12 @@
 
 //嘴
  ctx.beginPath();
- ctx.moveTo(320, 500); 
- ctx.bezierCurveTo(320, 500, 400, 600, 480, 500);
+ ctx.arc(400, 450, 80, 1/7*Math.PI,6/7*Math.PI, 0);
  ctx.stroke();
-
-// ctx.fillStyle = "red";
-// ctx.fillRect(320 - 5, 500 - 5, 10, 10); // 第一个控制点
-// ctx.fillRect(400 - 5, 600 - 5, 10, 10); // 第二个控制点
-// ctx.fillRect(480 - 5, 500 - 5, 10, 10); // 曲线的终点
+ 
+ //文字
+ ctx.font = "50px Arial";
+ ctx.fillText("The Canvas brought me to life!", 80, 770);
   </script>
    </body>
 </html>
